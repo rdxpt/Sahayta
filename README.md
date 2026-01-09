@@ -5,7 +5,45 @@
 
 ---
 
-## 📋 Project Overview
+## � Quick Start
+
+### Prerequisites
+- **Python 3.10+** installed
+- **Node.js 18+** installed  
+- **Redis** running (install: `choco install redis`)
+- **Ollama** running with models (https://ollama.ai)
+
+### Installation
+
+```powershell
+# Install backend dependencies
+pip install -r requirements.txt
+
+# Install frontend dependencies
+cd frontend
+npm install
+cd ..
+```
+
+### Start Application
+
+```powershell
+.\start.ps1
+```
+
+Opens:
+- **Backend**: http://localhost:8000
+- **Frontend**: http://localhost:3000
+
+### Stop Application
+
+```powershell
+.\stop.ps1
+```
+
+---
+
+## �📋 Project Overview
 
 **MCD 311 Sovereign Voice AI** is a groundbreaking grievance redressal system that brings government helplines into the **21st century** while maintaining **100% data sovereignty**.
 

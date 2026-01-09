@@ -25,19 +25,18 @@ from src.workflow import SovereignVoiceAIWorkflow
 from src.agent_state import AgentState, CallState
 from src.audio_processor import audio_processor
 
-# Configure logging with UTF-8 encoding
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger(__name__)
 # Set UTF-8 encoding for Windows console
 if sys.platform == 'win32':
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="MCD 311 WebSocket Server (Integrated)", version="1.0")
 

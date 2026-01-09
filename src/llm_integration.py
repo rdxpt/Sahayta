@@ -71,10 +71,6 @@ class SovereignLLM:
             context: Optional context dict
             max_tokens: Maximum tokens to generate (default: 100 for speed)
 
-        Args:
-            citizen_input: What the citizen said
-            context: Optional context (location, previous state, etc.)
-
         Returns:
             Quick response from the model
         """
@@ -88,7 +84,7 @@ class SovereignLLM:
                 options={
                     "temperature": 0.3, 
                     "top_p": 0.8,
-                    "num_predict": max_tokens  # Limit tokens for speed
+                    "num_predict": max_tokens
                 },
             )
 
