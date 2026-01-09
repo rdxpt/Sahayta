@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: sovereign-voice-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly no
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  ollama:
+    image: ollama/ollama
+    container_name: sovereign-voice-ollama
+    ports:
+      - "11434:11434"
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+    volumes:
+      - ollama_data:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  redis_data:
+  ollama_data:

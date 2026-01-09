@@ -1,0 +1,11 @@
+langchain>=0.1.9
+langgraph>=0.0.13
+langchain-community>=0.0.21
+redis>=5.0.1
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+typing-extensions>=4.9.0
+ollama>=0.6.1
+pyttsx3>=2.90
+numpy>=1.26.2
